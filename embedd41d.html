@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from selfbot.dev/api/embed.php? by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Aug 2023 20:54:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Graph (Facebook) -->
+    <meta property="og:title" content=" ">
+    <meta property="og:description" content=" ">
+    <meta property="og:image" content=" ">
+    <meta property="og:url" content="embedd41d.html?">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content=" ">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="# ">
+
+    
+
+    <style>
+body {
+    background-color: #2C2F33;
+    color: #FFF;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+}
+
+h1, h2 {
+    color: #7289DA;
+    text-align: center;
+    margin: 5px 0;  /* Reduced margins */
+}
+
+form {
+    background-color: #23272A;
+    border-radius: 5px;
+    padding: 10px;  /* Reduced padding */
+}
+
+hr {
+    border-top: 1px solid #4F545C;
+    margin: 5px 0;  /* Reduced margins */
+}
+
+label {
+    color: #B9BBBE;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3px; /* Reduced margin */
+}
+
+input[type="text"], input[type="color"], textarea {
+    width: 100%;
+    padding: 3px;  /* Reduced padding */
+    background-color: #2C2F33;
+    border: 1px solid #4F545C;
+    border-radius: 3px;
+    color: #FFF;
+    margin-bottom: 5px;  /* Reduced margin */
+}
+
+input[type="text"]::placeholder, textarea::placeholder {
+    color: #B9BBBE;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+textarea {
+    height: 60px;  /* Reduced height */
+    resize: vertical;
+    text-align: center;
+}
+
+input[type="color"] {
+    width: 101%;  /* Adjusted to fit better */
+}
+
+button#copyButton {
+    padding: 10px 20px;
+    background-color: #7289DA; /* Discord primary color */
+    color: #FFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-top: 10px; /* Adds some space between the button and the textarea */
+    outline: none; /* Removes the focus outline for a cleaner look */
+}
+
+button#copyButton:hover {
+    background-color: #586dbf; /* Slightly darker on hover */
+}
+
+button#copyButton:active {
+    transform: scale(0.97); /* Button presses down a bit on click */
+}
+    </style>
+</head>
+<body>
+    <h1>[Embed Generator]</h1>
+    <br>
+    <div class="container">
+        <h2>Embed Generator:</h2>
+        <hr>
+        <br>
+        <label for="title"><b>Title:</b></label>
+        <input type="text" id="title" name="title" oninput="updateOutput()"><br><br>
+        <label for="description"><b>Description:</b></label>
+        <input type="text" id="description" name="description" oninput="updateOutput()"><br><br>
+        <label for="image"><b>Image URL:</b></label>
+        <input type="text" id="image" name="image" oninput="updateOutput()"><br><br>
+        <label for="type"><b>Type:</b></label>
+        <input type="text" id="type" name="type" oninput="updateOutput()"><br><br>
+        <label for="locale"><b>Locale:</b></label>
+        <input type="text" id="locale" name="locale" value="en_US" oninput="updateOutput()"><br><br>
+        <label for="site_name"><b>Author:</b></label>
+        <input type="text" id="site_name" name="site_name" oninput="updateOutput()"><br><br>
+        <label for="redirect"><b>Redirect:</b></label>
+        <input type="text" id="redirect" name="redirect" oninput="updateOutput()"><br><br>
+        <label for="color"><b>Color:</b></label>
+        <input type="color" id="color" name="color" value="#cc66ff" oninput="updateOutput()"><br>
+        <input type="text" id="colorcode" name="colorcode" value="#cc66ff" readonly><br>
+        <br>
+        <div>
+            <label for="hidden_text"><b>Hide text:</b>
+            <input type="checkbox" id="hidden_text" name="hidden_text" onchange="updateOutput()"></label>
+        </div>
+        <br>
+    </div>
+    <h2>Generated URL:</h2>
+    <textarea id="output" rows="4" cols="80" readonly>https://selfbot.dev/api/embed.php?color=cc66ff&locale=en_US</textarea>
+    <button id="copyButton" onclick="copyToClipboard()">Copy to Clipboard</button>
+    <script>
+function generateUrl() {
+  var title = document.getElementById("title").value;
+  var description = document.getElementById("description").value;
+  var image = document.getElementById("image").value;
+  var color = document.getElementById("color").value;
+  var type = document.getElementById("type").value;
+  var locale = document.getElementById("locale").value;
+  var site_name = document.getElementById("site_name").value;
+  var redirect = document.getElementById("redirect").value;
+  var colorcode = document.getElementById("colorcode");
+  var hidden_text = document.getElementById("hidden_text").checked;
+  colorcode.value = color;
+  // Check if any of the input fields are empty
+  var url = "embedd41d.html?";
+  if (hidden_text) {
+    url = "||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| https://selfbot.dev/api/embed.php?";
+  }
+
+  if (title) {
+    url += "title=" + encodeURIComponent(title) + "&";
+  }
+  if (description) {
+    url += "description=" + encodeURIComponent(description) + "&";
+  }
+  if (image) {
+    url += "image=" + encodeURIComponent(image) + "&";
+  }
+  if (color) {
+    url += "color=" + encodeURIComponent(color.substr(1)) + "&";
+  }
+  if (type) {
+    url += "type=" + encodeURIComponent(type) + "&";
+  }
+  if (locale) {
+    url += "locale=" + encodeURIComponent(locale) + "&";
+  }
+  if (site_name) {
+    url += "author=" + encodeURIComponent(site_name) + "&";
+  }
+  if (redirect) {
+    url += "redirect=" + encodeURIComponent(redirect) + "&"
+  }
+  // Remove the trailing '&' if it exists
+  if (url.endsWith("&")) {
+    url = url.slice(0, -1);
+  }
+  document.getElementById("output").value = url;
+}
+
+function updateOutput() {
+  generateUrl();
+}
+
+function copyToClipboard() {
+    var copyText = document.getElementById("output");
+    copyText.select(); // Select the text
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+    document.execCommand("copy"); // Copy the selected text
+    alert("Copied the text: " + copyText.value); // Optional: show a confirmation to the user
+}
+    </script>
+</body>
+
+<!-- Mirrored from selfbot.dev/api/embed.php? by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Aug 2023 20:54:35 GMT -->
+</html>
